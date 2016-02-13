@@ -693,8 +693,6 @@ else do C-x 5 0 delete-frame"
  '(frame-title-format "emacs - %b" t)
  '(global-font-lock-mode t)
  '(helm-ff-newfile-prompt-p nil)
- '(helm-locate-command "glocate --existing %s %s")
- '(helm-locate-create-db-command "LC_ALL='C' gupdatedb --output='%s' --localpaths='%s'")
  '(ido-case-fold t)
  '(ispell-program-name "aspell")
  '(js-indent-level 8)
@@ -1875,21 +1873,19 @@ if breakpoints are present in `python-mode' files"
 ;;(global-set-key (kbd "C-x C-d") 'helm-browse-project) ; https://github.com/emacs-helm/helm-ls-git
 (global-set-key (kbd "C-x C-d") 'helm-ls-git-ls) ; https://github.com/emacs-helm/helm-ls-git
 
-;; end configuration
-;; ------------------------------
-
 ;; http://www.reddit.com/r/emacs/comments/1q6zx2/disable_helmfindfiles_path_autocompletion/
 ;; helm auto-complete in dired sucks, disable it
 (setq helm-ff-auto-update-initial-value nil)
 
-;; https://github.com/felix-d/dot-files/blob/e773f0ccbc39f6d858c09fa19735255d2317eec4/.emacs.d/init/helm-setup.el#L5
+(if (eq system-type 'darwin)
+	(setq helm-locate-fuzzy-match nil))
 (setq helm-locate-command
-        (case system-type
-          ('gnu/linux "locate -i -r %s")
-          ('berkeley-unix "locate -i %s")
-          ('windows-nt "es %s")
-          ('darwin "mdfind -name %s %s")
-          (t "locate %s")))
+      (case system-type
+        ('gnu/linux "locate -i -r %s")
+        ('berkeley-unix "locate -i %s")
+        ('windows-nt "es %s")
+        ('darwin "mdfind -name %s %s")
+        (t "locate %s")))
 
 ;; end helm configuration
 ;; ------------------------------
