@@ -1608,12 +1608,6 @@ if breakpoints are present in `python-mode' files"
 (winner-mode 1)
 
 ;; ------------------------------
-;; ctags-update
-;; ------------------------------
-(require 'ctags-update)
-(ctags-update-minor-mode 1)
-
-;; ------------------------------
 ;; ctags
 ;; ------------------------------
 
