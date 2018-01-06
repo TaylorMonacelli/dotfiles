@@ -1715,18 +1715,6 @@ if breakpoints are present in `python-mode' files"
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 ;; ------------------------------
-;; tramp
-;; ------------------------------
-(require 'backup-dir)
-(add-to-list 'bkup-backup-directory-info
-	     (list "." "~/.emacs.d/backups/" 'full-path))
-(setq tramp-bkup-backup-directory-info bkup-backup-directory-info)
-
-;; end tramp configuration
-;; ------------------------------
-
-
-;; ------------------------------
 ;; js2-mode
 ;; Enhanced JavaScript IDE Emacs Mode
 ;; ------------------------------
