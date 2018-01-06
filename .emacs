@@ -230,7 +230,7 @@ Return a list of installed packages or nil for every skipped package."
   (string-equal system-name "demos-MacBook-Pro.local"))
 
 (defun system-is-win7-desktop1 ()
-  (interactive)
+  (interactive)							;
   "Return true if the system we are running on is my PC at work"
   (string-equal system-name "DEMO-PC"))
 
@@ -678,7 +678,6 @@ else do C-x 5 0 delete-frame"
  '(frame-title-format "emacs - %b" t)
  '(global-font-lock-mode t)
  '(helm-ff-newfile-prompt-p nil)
- '(helm-locate-command "glocate --existing %s %s")
  '(helm-locate-create-db-command "LC_ALL='C' gupdatedb --output='%s' --localpaths='%s'")
  '(ido-case-fold t)
  '(ispell-program-name "aspell")
@@ -1770,16 +1769,6 @@ if breakpoints are present in `python-mode' files"
 ;; ------------------------------
 
 ;; ------------------------------
-;; winring
-;; ------------------------------
-(add-to-list 'load-path "~/.elisp")
-(require 'winring)
-(winring-initialize)
-
-;; end winring configuration
-;; ------------------------------
-
-;; ------------------------------
 ;; helm mode
 ;; ------------------------------
 
@@ -1822,14 +1811,6 @@ if breakpoints are present in `python-mode' files"
 		'helm-esh-pcomplete)))
 
 
-
-;; https://github.com/fengxiaolong/emacs.d-1/blob/master/init-helm.el
-(setq helm-completing-read-handlers-alist
-      '((dired-create-directory . nil)
-	(dired-do-copy . nil)
-        (dired-do-rename . nil)
-	(execute-extended-command . nil)
-	))
 
 
 ;; https://github.com/shishi/.emacs.d/blob/master/inits/10-helm.el
