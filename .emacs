@@ -803,14 +803,6 @@ else do C-x 5 0 delete-frame"
 (autoload 'wikipedia-mode "wikipedia-mode.el" "Major mode for editing documents in Wikipedia markup." t)
 
 ;; ------------------------------
-;; google fun stuff
-;; ------------------------------
-(require 'google-search)
-(require 'google-define)
-(define-key global-map "\C-cd" 'google-define)
-(define-key global-map "\C-cs" 'google-search-selection)
-
-;; ------------------------------
 ;; xquery-mode
 ;; ------------------------------
 (autoload 'xquery-mode "xquery-mode" "major mode for editing Xquery source." t)
