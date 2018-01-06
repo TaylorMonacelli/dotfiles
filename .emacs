@@ -1650,14 +1650,6 @@ if breakpoints are present in `python-mode' files"
 (shell)
 
 ;; ------------------------------
-;; Window Number mode
-;; ------------------------------
-;; http://nschum.de/src/emacs/window-numbering-mode/
-(add-to-list 'load-path "~/.elisp")
-(require 'window-numbering)
-(window-numbering-mode 1)
-
-;; ------------------------------
 ;; Frame resolution
 ;; ------------------------------
 ;; http://stackoverflow.com/questions/92971/how-do-i-set-the-size-of-emacs-window
